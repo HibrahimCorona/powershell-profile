@@ -152,7 +152,7 @@ else {
 
 ### Creation of config folder for vscode and symbolic links to customization of VSCode.
 $folderPath = "C:\.config"
-$sourceDir = "$HOME\Documents\Powershell\Customization"
+$sourceDir = "$HOME\Documents\Powershell\dotfiles"
 
 # Ensure the destination folder exists
 if (-not (Test-Path -Path $folderPath)) {
@@ -175,13 +175,19 @@ if (-not (Test-Path -Path "$folderPath\fastfetch")) {
     Write-Host "Created directory: $folderPath\fastfetch"
 }
 
+if (-not (Test-Path -Path "$folderPath\alacritty")) {
+    New-Item -Path "$folderPath\alacritty" -ItemType Directory | Out-Null
+    Write-Host "Created directory: $folderPath\alacritty"
+}
+
 # Define the links to manage: LinkPath => TargetPath
 $links = @{
     "$folderPath\vscode\custom.css"                  = "$sourceDir\vscode\custom.css"
     "$folderPath\vscode\custom.js"                   = "$sourceDir\vscode\custom.js"
     "$folderPath\ohmyposh\catpuccino-mocha.omp.json" = "$sourceDir\ohmyposh\catpuccino-mocha.omp.json"
-    "$folderPath\fastfetch\config.jsonc"                   = "$sourceDir\fastfetch\config.jsonc"
-    "$folderPath\fastfetch\koala.txt"                   = "$sourceDir\fastfetch\koala.txt"
+    "$folderPath\fastfetch\config.jsonc"             = "$sourceDir\fastfetch\config.jsonc"
+    "$folderPath\fastfetch\koala.txt"                = "$sourceDir\fastfetch\koala.txt"
+    "$folderPath\alacritty\alacritty.toml"           = "$sourcerDir\alacritty\alacritty.toml"
 }
 
 # Create links only if they do not already exist
