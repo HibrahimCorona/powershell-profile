@@ -122,11 +122,11 @@ function Install-NerdFonts
     Write-Error "Failed to download or install ${FontDisplayName} font. Error: $_"
   }
 }
-$fontVersion = "3.3.0"
+$fontVersion = "3.5.0"
 Install-NerdFonts "CascadiaCode" "CaskaydiaCove NF" "$fontVersion"
 Install-NerdFonts "FiraCode" "FiraCode Nerd Font"  "$fontVersion"
 Install-NerdFonts "JetBrainsMono" "JetBrainsMono NF" "$fontVersion"
-
+Install-NerdFonts "SourceCodePro" "SourceCodePro" "$fontVersion"
 # Profile creation or update
 if (!(Test-Path -Path $PROFILE -PathType Leaf))
 {
