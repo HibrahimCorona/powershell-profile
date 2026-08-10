@@ -126,7 +126,7 @@ $fontVersion = "3.5.0"
 Install-NerdFonts "CascadiaCode" "CaskaydiaCove NF" "$fontVersion"
 Install-NerdFonts "FiraCode" "FiraCode Nerd Font"  "$fontVersion"
 Install-NerdFonts "JetBrainsMono" "JetBrainsMono NF" "$fontVersion"
-Install-NerdFonts "SourceCodePro" "SourceCodePro" "$fontVersion"
+Install-NerdFonts "SourceCodePro" "SauceCodePro NF" "$fontVersion"
 # Profile creation or update
 if (!(Test-Path -Path $PROFILE -PathType Leaf))
 {
@@ -203,17 +203,13 @@ if (-not (Test-Path -Path "$folderPath\alacritty"))
   Write-Host "Created directory: $folderPath\alacritty"
 }
 
-# Define the links to manage: LinkPath => TargetPath
 $links = @{
-  "$folderPath\vscode\custom.css"                  = "$sourceDir\vscode\custom.css"
-  "$folderPath\vscode\custom.js"                   = "$sourceDir\vscode\custom.js"
-  "$folderPath\ohmyposh\catpuccino-mocha.omp.json" = "$sourceDir\ohmyposh\catpuccino-mocha.omp.json"
-  "$folderPath\fastfetch\config.jsonc"             = "$sourceDir\fastfetch\config.jsonc"
-  "$folderPath\fastfetch\koala.txt"                = "$sourceDir\fastfetch\koala.txt"
-  "$folderPath\alacritty\alacritty.toml"           = "$sourcerDir\alacritty\alacritty.toml"
+  "$folderPath\vscode\"                    = "$sourceDir\vscode\"
+  "$folderPath\ohmyposh\"                  = "$sourceDir\ohmyposh"
+  "$folderPath\fastfetch\"                 = "$sourceDir\fastfetch\"
+  "$folderPath\alacritty\"                 = "$sourcerDir\alacritty\"
 }
 
-# Create links only if they do not already exist
 foreach ($link in $links.GetEnumerator())
 {
   if (-not (Test-Path -Path $link.Key))
