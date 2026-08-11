@@ -127,7 +127,7 @@ Install-NerdFonts "CascadiaCode" "CaskaydiaCove NF" "$fontVersion"
 Install-NerdFonts "FiraCode" "FiraCode Nerd Font"  "$fontVersion"
 Install-NerdFonts "JetBrainsMono" "JetBrainsMono NF" "$fontVersion"
 Install-NerdFonts "SourceCodePro" "SauceCodePro NF" "$fontVersion"
-Install-NerdFonts "MesloLGS Nerd Font" "MesloLGS Nerd Font" "$fontVersion"
+Install-NerdFonts "Meslo" "MesloLGS Nerd Font" "$fontVersion"
 # Profile creation or update
 if (!(Test-Path -Path $PROFILE -PathType Leaf))
 {
