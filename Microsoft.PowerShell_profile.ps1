@@ -360,3 +360,15 @@ function Clear-DotNetArtifacts
   Get-ChildItem -Path .\* -Include bin, obj -Recurse -Directory | Remove-Item -Recurse -Force
   Write-Host "Cleanup complete!" -ForegroundColor Green
 }
+
+function grep
+{
+  param (
+    [Parameter(Mandatory)]
+    [ValidateNotNullOrEmpty()]
+    [string] $pattern
+  )
+ 
+  Get-ChildItem -Recurse -File -ErrorAction SilentlyContinue | Select-String -Pattern $pattern
+
+}
