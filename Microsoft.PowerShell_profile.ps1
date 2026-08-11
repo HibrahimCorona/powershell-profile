@@ -31,49 +31,49 @@ if ([System.IO.File]::Exists($nvimPath))
 
 ####    Git Commands
 function gcl($url)
-{ git clone $url 
+{ git clone $url
 }
 function gpr
-{ git pull --rebase 
+{ git pull --rebase
 }
 function gprm
-{ git pull --rebase origin main 
+{ git pull --rebase origin main
 }
 function gs
-{ git status 
+{ git status
 }
 function gss
-{ git status -s 
+{ git status -s
 }
 function ga
-{ git add . 
+{ git add .
 }
 function gcom
-{ git commit -m $args 
+{ git commit -m $args
 }
 function glog
-{ git log --oneline 
+{ git log --oneline
 }
 function gbs
-{ git branch 
+{ git branch
 }
 function gc-b
-{ git checkout -B 
+{ git checkout -B
 }
 function gco($branch)
-{ git checkout $branch 
+{ git checkout $branch
 }
 function gcob($branch)
-{ git checkout -b $branch 
+{ git checkout -b $branch
 }
 function gd
-{ git diff 
+{ git diff
 }
 function gpu
-{ git push 
+{ git push
 }
 function gpf
-{ git push --force-with-lease 
+{ git push --force-with-lease
 }
 
 ###     PSReadLineOptions
@@ -251,7 +251,7 @@ function tail
 }
 
 function touch($file)
-{ "" | Out-File $file -Encoding ASCII 
+{ "" | Out-File $file -Encoding ASCII
 }
 
 function ff($name)
@@ -269,16 +269,16 @@ function reload()
 function me
 {
   if (Test-Path -Path "d:\code")
-  { Set-Location "d:\code" 
+  { Set-Location "d:\code"
   } elseif (Test-Path -Path "c:\repo")
-  { Set-Location "C:\repo" 
+  { Set-Location "C:\repo"
   } elseif (Test-Path -Path "c:\code")
-  { Set-Location "c:\code" 
+  { Set-Location "c:\code"
   }
 }
 
 function ll
-{ Get-ChildItem -Path . -Force 
+{ Get-ChildItem -Path . -Force
 }
 
 function Update-PowerShell
@@ -336,21 +336,21 @@ function Test-Command
 # Dotnet Aliases
 Set-Alias -Name d -Value dotnet
 function dw
-{ dotnet watch run 
+{ dotnet watch run
 }
 function dt
-{ dotnet test 
+{ dotnet test
 }
 function db
-{ dotnet build 
+{ dotnet build
 }
 function d-ef
-{ dotnet ef 
+{ dotnet ef
 }
 function dcb
 { dotnet clean; if ($LASTEXITCODE -eq 0)
-  { dotnet build 
-  } 
+  { dotnet build
+  }
 }
 
 # Clean all bin and obj folders recursively.

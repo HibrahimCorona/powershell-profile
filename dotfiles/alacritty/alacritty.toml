@@ -30,7 +30,7 @@ startup_mode = "Windowed"
 # Font
 [font]
 size = 18
-normal = { family = "JetBrainsMono Nerd Font", style = "Regular"}
+normal = { family = "SauceCodePro NF", style = "Regular" }
 
 [keyboard]
 bindings = [
