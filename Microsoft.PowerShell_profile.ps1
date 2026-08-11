@@ -353,7 +353,6 @@ function dcb
   }
 }
 
-# Clean all bin and obj folders recursively.
 function Clear-DotNetArtifacts
 {
   Write-Host "Cleaning bin and obj folders..." -ForegroundColor Yellow
@@ -361,14 +360,18 @@ function Clear-DotNetArtifacts
   Write-Host "Cleanup complete!" -ForegroundColor Green
 }
 
-function grep
+function Invoke-Grep
 {
-  param (
-    [Parameter(Mandatory)]
+  param(
+    [Parameter(Mandatory=$true, Position=0)]
     [ValidateNotNullOrEmpty()]
-    [string] $pattern
-  )
- 
-  Get-ChildItem -Recurse -File -ErrorAction SilentlyContinue | Select-String -Pattern $pattern
+    [string]$Pattern,
 
+    [Parameter(Mandatory=$false, Position=1)]
+    [string]$Path = "."
+  )
+  Get-ChildItem -Path $Path -Recurse -File -ErrorAction SilentlyContinue | Select-String -Pattern $Pattern
 }
+
+New-Alias -Name grep -Value Invoke-Grep -Force
+
