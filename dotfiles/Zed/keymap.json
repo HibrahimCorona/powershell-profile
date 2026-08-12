@@ -1,0 +1,59 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+    {
+        "context": "Workspace",
+        "bindings": {
+            // "shift shift": "file_finder::Toggle"
+            "alt-s": "zed::OpenSettingsFile",
+            "alt-k": "zed::OpenKeymapFile",
+            "cmd-\\": "workspace::ActivatePreviousPane"
+        },
+    },
+    {
+        "context": "vim_mode == insert",
+        "bindings": {
+            "j j": "vim::SwitchToNormalMode",
+        }
+    },
+    {
+        "context": "!Editor",
+        "bindings": {
+            "l": "menu::SelectPrevious",
+            "k": "menu::SelectNext",
+        },
+    },
+    {
+        "context": "Editor && vim_mode == normal",
+        "bindings": {
+            "n": "vim::RepeatFind",
+            "f g": "editor::SelectAllMatches",
+            "space f": "editor::Format",
+            "space i": "editor::OrganizeImports",
+            "x x": "editor::GoToDiagnostic",
+            "x c": "editor::GoToPreviousDiagnostic",
+            "space p": "command_palette::Toggle",
+            "space ;": "workspace::ToggleRightDock",
+            "space c l": "workspace::ToggleCenteredLayout",
+            "space e": "project_panel::Toggle",
+            "space \\": "project_panel::CollapseAllEntries",
+            "space w": "pane::CloseActiveItem",
+            "space o": "outline::Toggle",
+        }
+    },
+    {
+        "context": "Editor",
+        "bindings": {
+            "ctrl-j": "editor::DuplicateLineDown",
+            "ctrl-[": "editor::Fold",
+            "ctrl-]": "editor::UnfoldLines",
+            "ctrl-shift-[": "editor::FoldAll",
+            "ctrl-shift-]": "editor::UnfoldAll"
+        }
+    }
+]
