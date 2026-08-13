@@ -219,7 +219,11 @@ foreach ($link in $links.GetEnumerator())
 
 New-Item -ItemType SymbolicLink -Path "$env:APPDATA\Zed\settings.json" -Target "$sourceDir\Zed\settings.json" -Force
 New-Item -ItemType SymbolicLink -Path "$env:APPDATA\Zed\keymap.json" -Target "$sourceDir\Zed\keymap.json" -Force
-New-Item -ItemType SymbolicLink -Path "$env:APPDATA\alacritty\alacritty.toml" -Target "$sourceDir\alacritty\alacritty.toml" -Force
+if (Test-Path -Path "$env:APPDATA\alacritty")
+{
+    Remove-Item "$env:APPDATA\alacritty" -Recurse -Confirm:$false
+}
+New-Item -ItemType Junction -Path "$env:APPDATA\alacritty\" -Target "$sourceDir\alacritty\" -Force
 
 $no = ("no", "n")
 $yes = ("yes", "y")
