@@ -172,6 +172,8 @@ if (!(Test-Path -Path $PROFILE -PathType Leaf))
 ### Creation of config folder for vscode and symbolic links to customization of VSCode.
 $folderPath = "C:\.config"
 $sourceDir = "$HOME\Documents\Powershell\dotfiles"
+$zedDir = "$env:APPDATA\Zed"
+$vsDir = "$env:APPDATA\Code\User\"
 
 # Ensure the destination folder exists
 if (-not (Test-Path -Path $folderPath))
@@ -206,7 +208,7 @@ if (-not (Test-Path -Path "$folderPath\alacritty"))
 
 if (-not (Test-Path -Path "$folderPath\zed"))
 {
-    New-Item -path "$folderPaht\zed" -ItemType Directory | Out-Null
+    New-Item -path "$folderPath\Zed" -ItemType Directory | Out-Null
     Write-Host "Created directory: $folderPath\zed"
 }
 
@@ -215,7 +217,7 @@ $links = @{
     "$folderPath\ohmyposh\"                  = "$sourceDir\ohmyposh"
     "$folderPath\fastfetch\"                 = "$sourceDir\fastfetch\"
     "$folderPath\alacritty\"                 = "$sourcerDir\alacritty\"
-    "$folderPath\zed"                        = "$sourceDir\zed"
+    "$zedDir"                                = "$sourceDir\zed"
 }
 
 foreach ($link in $links.GetEnumerator())
