@@ -30,7 +30,7 @@ startup_mode = "Windowed"
 # Font
 [font]
 size = 18
-normal = { family = "MesloLGS Nerd Font", style = "Regular" }
+normal = { family = "Iosevka NF", style = "Regular" }
 
 [keyboard]
 bindings = [
