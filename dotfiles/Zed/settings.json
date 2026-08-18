@@ -7,13 +7,32 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "ssh_connections": [
+    {
+      "host": "192.168.5.116",
+      "args": [],
+      "projects": [
+        {
+          "paths": [
+            "/mnt/data1/hugo"
+          ]
+        }
+      ]
+    },
+    {
+      "host": "192.168.5.111",
+      "args": [],
+      "projects": []
+    }
+  ],
+  "cli_default_open_behavior": "existing_window",
   "disable_ai": false,
   "terminal": {
-    "font_weight": 400.0,
+    "font_weight": 400,
     "font_size": 18.0,
   },
-  "buffer_font_family": "JetBrainsMono Nerd Font",
-  "buffer_font_size": 18,
+  "buffer_font_family": "Iosevka Nerd Font",
+  "buffer_font_size": 22,
   "icon_theme": {
     "mode": "dark",
     "light": "Warm Charmed Icons",
@@ -22,7 +41,7 @@
   "theme": {
     "mode": "dark",
     "light": "One Light",
-    "dark": "Catppuccin Mocha",
+    "dark": "Everforest Dark Medium (material)",
   },
   "toolbar": {
     "quick_actions": false,
